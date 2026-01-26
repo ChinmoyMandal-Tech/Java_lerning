@@ -8,6 +8,11 @@ interface Bank {
     }
     
     static void staticHello() {
+        System.out.println("static methods");
+    }
+    
+    default void defaultHello() {
+        System.out.println("default methods");
     }
 }
 
@@ -16,7 +21,6 @@ interface Saving extends Bank {
     static void hello() {
         System.out.println("saving x: " + x);
     }
-
     void roi();
 }
 
@@ -35,5 +39,8 @@ public class Interface {
         // Saving.staticHello();   // static methods are not inherited
         Account a1 = new Account();
         a1.roi();
+
+        Bank b = new Account();
+        b.roi();
     }
 }
